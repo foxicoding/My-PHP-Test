@@ -1,2 +1,2 @@
 <?php
-	echo ' mian shi success';
+	echo 'mian shi success';
