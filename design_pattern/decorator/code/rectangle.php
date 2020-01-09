@@ -17,6 +17,6 @@ class rectangle implements shape
 {
     public function Draw()
     {
-        'this is a rectangle';
+        echo 'this is a rectangle';
     }
 }
