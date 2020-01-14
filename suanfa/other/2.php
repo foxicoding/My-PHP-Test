@@ -14,8 +14,11 @@
  * 那只猴子就叫做大王。要求编程模拟此过程，输入m、n, 输出最后那个大王的编号。用程序模拟该过程。
  */
 
-function getKing($m,$n)
+function getKing1($m,$n)
 {
+    if($m > $n){
+        return false;
+    }
     $arr = range(1,$n);
     $i = 0;
     while (count($arr) > 1){
@@ -30,5 +33,22 @@ function getKing($m,$n)
     return $arr;
 }
 
-var_dump(getKing(2,3));
+function getKing2($m,$n){
+    if($m > $n){
+        return false;
+    }
+    $arr = range(1,$n);
+    $i = 0;
+    while(count($arr) != 1){
+        if(($i+1)%$m == 0){
+            unset($arr[$i]);
+        } else {
+            array_push($arr,$arr[$i]);
+            unset($arr[$i]);
+        }
+        $i++;
+    }
+    return $arr;
+}
+
 

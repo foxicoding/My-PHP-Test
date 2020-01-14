@@ -5,25 +5,7 @@
  * author: ljb
  */
 
-
-/**
- * 定义一棵二叉树节点
- */
-class Node
-{
-    public $data;
-    public $parent;
-    public $left;
-    public $right;
-
-    public function __construct($data)
-    {
-        $this->data = $data;
-        $this->parent = NULL;
-        $this->left = NULL;
-        $this->right = NULL;
-    }
-}
+require  './node.php';
 
 /**
  * 实现一棵二叉搜索树
@@ -32,7 +14,6 @@ class Node
 class Bst
 {
     public $root;
-
 
     public function init($arr)
     {
