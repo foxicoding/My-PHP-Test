@@ -7,6 +7,14 @@
  */
 
 
+/**
+ * 时间复杂度：平均 O（nlogn ）  最好O（nlogn）  最坏 O(n^2)
+ * 空间复杂度：O(logn)~O(n)
+ * 稳定性：不稳定
+ * 复杂性：较复杂
+ * @param $arr
+ * @return array
+ */
 function quick($arr)
 {
     if (empty($arr)){

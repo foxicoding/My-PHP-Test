@@ -37,8 +37,8 @@ function findKthLargest($nums, $k) {
     if(count($nums) == 1){
         return $nums[0];
     }
-    $minHeap = new SplMinHeap();
     //构建最小堆
+    $minHeap = new SplMinHeap();
     foreach($nums as $num){
         $minHeap->insert($num);
     }

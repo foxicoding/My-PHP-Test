@@ -7,6 +7,15 @@
  */
 
 
+
+/**
+ * 时间复杂度：平均 O(n^2)  最好O(n) 最坏 O(n^2)
+ * 空间复杂度：O(1)
+ * 稳定性：稳定
+ * 复杂性：简单
+ * @param $arr
+ * @return array
+ */
 function insert($arr)
 {
     if (empty($arr)){
