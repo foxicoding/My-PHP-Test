@@ -24,7 +24,6 @@ function getKing($m,$n)
             if ($i == $m){
                 unset($arr[$k]);
                 $i = 0;
-                continue;
             }
         }
     }
