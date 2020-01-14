@@ -42,7 +42,7 @@ function findKthLargest($nums, $k) {
     foreach($nums as $num){
         $minHeap->insert($num);
     }
-    //移除k-1个元素
+    //从堆的顶部移除元素
     $count = count($nums);
     for($i=0;$i < $count - $k;$i++){
         $minHeap->extract();
