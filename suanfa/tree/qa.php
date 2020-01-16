@@ -6,6 +6,34 @@
  * Time:11:35 上午
  */
 
+/**
+ * 求二叉树的最大深度
+ * @param $root
+ * @return int
+ */
+function getMaxDeep($root)
+{
+    if ($root == NULL){
+        return 0;
+    }
+    $maxLeft = getMaxDeep($root->left);
+    $maxRight = getMaxDeep($root->right);
+    echo $maxLeft > $maxRight ? $maxLeft + 1 : $maxRight + 1;
+}
+
+/**
+ * 求二叉树的最小深度
+ * @param $root
+ * @return int
+ */
+function getMinDeep($root)
+{
+    if ($root == NULL){
+        return 0;
+    }
+    return  min(getMinDeep($root->left),getMinDeep($root->right)) + 1;
+}
+
 
 /**
  * /求二叉树的节点个数
@@ -60,18 +88,18 @@ function getKNodeNum($root,$k){
  */
 function isBalanced($root)
 {
-    return getMaxDeep($root) != -1;
+    return getDeep($root) != -1;
 }
-function getMaxDeep($root)
+function getDeep($root)
 {
     if ($root == NULL){
         return 0;
     }
-    $left = getMaxDeep($root->left);
+    $left = getDeep($root->left);
     if ($left == -1){
         return -1;
     }
-    $right = getMaxDeep($root->right);
+    $right = getDeep($root->right);
     if ($right == -1){
         return -1;
     }
