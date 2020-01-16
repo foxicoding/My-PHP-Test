@@ -118,3 +118,71 @@ function isComplete($root){
     }
     return $result;
 }
+
+/**
+ * 两个二叉树是否完全相同
+ * @param $tree1
+ * @param $tree2
+ * @return bool
+ */
+function isSameTreeNode($tree1,$tree2){
+    if($tree1 == NULL && $tree2 == NULL){
+        return true;
+    }
+    if($tree1 == NULL || $tree2 == NULL){
+        return false;
+    }
+    if($tree1->value != $tree2->value){
+        return false;
+    }
+    $left = isSameTreeNode($tree1->left, $tree2->left);
+    $right = isSameTreeNode($tree1->right, $tree2->right);
+    return $left && $right;
+}
+
+/**
+ * 两个二叉树是否互为镜像
+ * @param $root
+ * @return bool
+ */
+function isSymmetric($root)
+{
+    if (!$root){
+        return true;
+    }
+    return  dfs($root->left,$root->right);
+}
+function dfs($left,$right)
+{
+    if (!$left && !$right){
+        return true;
+    }
+    if (
+        (!$left && $right) ||
+        ($left && !$right) ||
+        ($left->val != $right->val)
+    ){
+        return false;
+    }
+    return dfs($left->left,$right->right) && dfs($right->right,$right->left);
+}
+
+/**
+ * 翻转二叉树
+ * @param $root
+ * @return null
+ */
+function rotateTree($root){
+    if($root == NULL){
+        return NULL;
+    }
+    //先翻转左子树
+    $left = mirrorTreeNode($root -> left);
+    //载翻转右子树
+    $right = mirrorTreeNode($root -> right);
+
+    //最后左右子树交换位置
+    $root->left = $right;
+    $root->right = $left;
+    return $root;
+}
