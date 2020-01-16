@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * author: ljb
  */
@@ -10,7 +8,6 @@ require  './node.php';
 /**
  * 实现一棵二叉搜索树
  */
-
 class Bst
 {
     public $root;
