@@ -55,3 +55,16 @@ $app->addRoute('/user', function(){
     $this->responseBody = 'hello world';
 });
 $app->disPath('/user');
+
+
+function getMoney()
+{
+    $rmb = 1;
+    return function () use ($rmb){
+        echo ++$rmb;
+    };
+}
+
+$money = getMoney();
+$money();
+$money();

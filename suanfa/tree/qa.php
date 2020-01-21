@@ -205,9 +205,9 @@ function rotateTree($root){
         return NULL;
     }
     //先翻转左子树
-    $left = mirrorTreeNode($root -> left);
+    $left = mirrorTreeNode($root->left);
     //载翻转右子树
-    $right = mirrorTreeNode($root -> right);
+    $right = mirrorTreeNode($root->right);
 
     //最后左右子树交换位置
     $root->left = $right;
