@@ -55,7 +55,6 @@ function multiply($num1, $num2) {
         $sum = $sum + (int)($sumTemp . implode('',$times1));
         $times1[] = 0;
     }
-    var_dump($sum);exit;
     if (($zeroNum1 + $zeroNum2) > 0){
         $sum = $sum * pow(10,$zeroNum1 + $zeroNum2);
     }
