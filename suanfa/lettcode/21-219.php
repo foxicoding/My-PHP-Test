@@ -26,6 +26,7 @@
  */
 
 
+//利用二维数组
 function containsNearbyDuplicate($nums, $k) {
     if (empty($nums)){
         return false;

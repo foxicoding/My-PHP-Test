@@ -19,7 +19,7 @@ function getKing1($m,$n)
     if($m > $n){
         return false;
     }
-    $arr = range(1,$n);
+    $arr = range(1,$n); //生成序号
     $i = 0;
     while (count($arr) > 1){
         foreach ($arr as $k => $v){

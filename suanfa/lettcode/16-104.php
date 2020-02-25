@@ -22,6 +22,10 @@
 
  */
 
+/**
+ * @param $root
+ * @return int
+ */
 function maxDepth($root) {
     if (!$root){
         return 0;

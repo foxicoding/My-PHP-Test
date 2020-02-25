@@ -43,7 +43,7 @@ function longestCommonPrefix($strs) {
     }
     $res = $strs[0];
     foreach ($strs as $key => $str){
-        $res = $this->compareStr($res,$str);
+        $res = compareStr($res,$str);
     }
     return $res;
 }

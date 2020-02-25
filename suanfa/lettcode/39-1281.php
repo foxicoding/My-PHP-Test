@@ -34,14 +34,13 @@
  */
 
 function subtractProductAndSum($n) {
-    echo intval(161 / 62);exit;
     if ($n < 10){
         return $n;
     }
     //直接求
     $product = 1;
     $sum = 0;
-    while ($n > 1){
+    while ($n >= 1){
         $a = $n % 10;
         $product = $product * $a;
         $sum = $sum + $a;

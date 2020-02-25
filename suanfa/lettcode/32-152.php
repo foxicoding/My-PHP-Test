@@ -29,5 +29,16 @@
  * @return float|int|mixed
  */
 function maxProduct($nums) {
+    if(empty($nums)){
+        return 0;
+    }
+    $count = count($nums);
+    $dp = [];
+    for ($i=1;$i<$count;$i++){
+        $x = $i % 2;
+        $y = ($i - 1) % 2;
+        $dp[$x][0] = max();
+        $dp[$x][1] = min();
 
+    }
 }

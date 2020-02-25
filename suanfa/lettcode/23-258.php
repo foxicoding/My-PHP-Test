@@ -35,7 +35,7 @@ function addDigitsMe($num) {
         $num = $num / 10;
     }
     if ($sum >= 10){
-        return addDigits($sum);
+        return addDigitsMe($sum);
     }else{
         return $sum;
     }
