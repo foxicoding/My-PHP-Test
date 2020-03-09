@@ -34,7 +34,7 @@ class B extends Foo{
 
 }
 
-$B=new B();
+$B = new B();
 $B->test();
 $B->test2();
 Foo::test3();

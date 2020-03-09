@@ -53,7 +53,7 @@ class SingletonEH
  */
 class SingletonLH
 {
-    public static $singleton = NULL;
+    private static $singleton = NULL;
 
     private function __construct()
     {

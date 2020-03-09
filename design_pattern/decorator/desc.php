@@ -2,9 +2,9 @@
 /**
  * Create by phpstorm
  * User:liujinbao
- * Date:2020/1/4
- * Time:3:33 下午
- */
+* Date:2020/1/4
+* Time:3:33 下午
+*/
 
 /**
  * 装饰器模式（Decorator Pattern） 允许向一个现有的对象中添加新的功能，同时又不改变其结构。
