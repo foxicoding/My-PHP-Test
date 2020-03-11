@@ -16,12 +16,14 @@ $c = new Node('C');
 $d = new Node('D');
 $e = new Node('E');
 $f = new Node('F');
+$g = new Node('G');
 
 $a->left = $b;
 $a->right = $c;
 
 $b->left = $d;
 $b->parent = $a;
+$b->right = $g;
 
 $c->left = $e;
 $c->right = $f;
@@ -35,8 +37,8 @@ $f->parent = $c;
 
 
 //            A
-//         B     C
-//      D       E    F
+//         B      C
+//      D    G  E    F
 
 
 //递归前序遍历 根节点 ---> 左子树 ---> 右子树
@@ -50,7 +52,7 @@ function preOrderDiGui($root)
         preOrderDiGui($root->right);
     }
 }
-preOrderDiGui($a);
+preOrderDiGui($a);  // A B D C E F
 echo '<br/>';
 
 //非递归（迭代解法）前序遍历 根节点 ---> 左子树 ---> 右子树
@@ -69,7 +71,7 @@ function preOrder($root)
         }
     }
 }
-preOrder($a);
+preOrder($a); //A B D C E F
 echo '<br/>';
 
 //递归中序遍历  左子树 ---> 根节点 ---> 右子树
@@ -86,7 +88,7 @@ function midOrderDiGui($root)
     }
 }
 
-midOrderDiGui($a);
+midOrderDiGui($a); // D B A E C F
 echo '<br/>';
 
 //非递归中序遍历，左子树---> 根节点 ---> 右子树
@@ -104,7 +106,7 @@ function midOrder($root)
         $centerNode = $centerNode->right;
     }
 }
-midOrder($a);
+midOrder($a); // D B A E C F
 echo '<br/>';
 
 //递归后序遍历  左子树 ---> 右子树 ---> 根节点

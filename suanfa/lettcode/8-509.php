@@ -23,7 +23,7 @@ function fib($N) {
     if ($N < 2){
         return $N;
     }else{
-        return $this->fib($N-1) + $this->fib($N-2);
+        return fib($N-1) + fib($N-2);
     }
 }
 $N = 5;

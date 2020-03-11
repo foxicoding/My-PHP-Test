@@ -30,7 +30,7 @@ function addDigitsMe($num) {
         return $num;
     }
     $sum = 0;
-    while ($num > 0){
+    while ($num >= 1){
         $sum += $num % 10;
         $num = $num / 10;
     }
@@ -48,4 +48,4 @@ function addDigitsDashen($num) {
 
 $num = 38;
 
-var_dump(addDigitsDashen($num));
+var_dump(addDigitsMe($num));
