@@ -20,6 +20,11 @@
  * 题目：找出一组数字序列中出现次数大于总数1/2的数字（并且假设这个数字一定存在）
  */
 
+
+/**
+ * @param $arr
+ * @return bool|int|mixed
+ */
 function getMajority($arr)
 {
     if (empty($arr)){

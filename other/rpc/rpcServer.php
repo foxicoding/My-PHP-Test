@@ -110,7 +110,6 @@ class rpcServer {
             if ($client) {
                 echo "有新连接\n";
                 $buf = fread($client, $this->config['max_size']);
-                var_dump($buf);exit;
                 print_r('接收到的原始数据:'.$buf."\n");
                 // 自定义协议目的是拿到类方法和参数(可改成自己定义的)
                 $this->parseProtocol($buf,$class, $method,$params);

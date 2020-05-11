@@ -36,7 +36,7 @@ function getMinDeep($root)
 
 
 /**
- * /求二叉树的节点个数
+ * 求二叉树的节点个数
  * @param $root
  * @return int
  */
@@ -90,6 +90,7 @@ function isBalanced($root)
 {
     return getDeep($root) != -1;
 }
+
 function getDeep($root)
 {
     if ($root == NULL){

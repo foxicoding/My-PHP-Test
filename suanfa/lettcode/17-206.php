@@ -26,9 +26,10 @@ function reverseList($head) {
     $pre = NULL;
     $cur = $head;
     while ($cur != NULL){
+        $next = $cur->next;
         $cur->next = $pre;
         $pre = $cur;
-        $cur = $cur->next;
+        $cur = $next;
     }
     return $pre;
 }

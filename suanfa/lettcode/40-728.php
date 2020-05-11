@@ -34,8 +34,6 @@
  * @return array
  */
 function selfDividingNumbers($left, $right) {
-    $a = 1e-9;
-    var_dump($a);
     if ($right <= 9){
         return range($left,$right);
     }

@@ -42,7 +42,7 @@ function isHappy($n) {
     while (true){
 
         $sum = 0;
-        while ($n > 0){
+        while ($n >= 1){
             $sum += pow($n % 10,2);
             $n = $n/10;
         }
@@ -57,5 +57,5 @@ function isHappy($n) {
     }
 }
 
-$n = 0.19;
+$n = 19;
 var_dump(isHappy($n));

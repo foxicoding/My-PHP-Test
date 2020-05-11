@@ -28,6 +28,31 @@
     如果 nums2 的元素存储在磁盘上，磁盘内存是有限的，并且你不能一次加载所有的元素到内存中，你该怎么办？
  */
 
+/**
+ * @param $nums1
+ * @param $nums2
+ * @return array
+ */
 function intersect($nums1, $nums2) {
-
+    sort($nums1);
+    sort($nums2);
+    $i = count($nums1) - 1;
+    $j = count($nums2) - 1;
+    $res = [];
+    while ($i >= 0 && $j >= 0){
+        if ($nums1[$i] == $nums2[$j]){
+            $res[] = $nums1[$i];
+            $i--;
+            $j--;
+        }elseif($nums1[$i] > $nums2[$j]){
+            $i--;
+        }else{
+            $j--;
+        }
+    }
+    return $res;
 }
+
+$nums1 = [1,2,2,1];
+$nums2 = [2,2];
+var_dump(intersect($nums1,$nums2));

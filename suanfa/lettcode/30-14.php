@@ -65,3 +65,5 @@ function compareStr($str1,$str2)
     }
     return $res;
 }
+
+var_dump(longestCommonPrefix(["flower","flow","flight"]));

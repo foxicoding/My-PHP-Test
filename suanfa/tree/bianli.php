@@ -44,6 +44,9 @@ $f->parent = $c;
 //递归前序遍历 根节点 ---> 左子树 ---> 右子树
 function preOrderDiGui($root)
 {
+    if (!$root){
+        return;
+    }
     echo $root->data . '    ';
     if ($root->left != NULL){
         preOrderDiGui($root->left);
@@ -58,6 +61,9 @@ echo '<br/>';
 //非递归（迭代解法）前序遍历 根节点 ---> 左子树 ---> 右子树
 function preOrder($root)
 {
+    if (!$root){
+        return;
+    }
     $stack = [];
     array_push($stack,$root);
     while(!empty($stack)){
@@ -77,6 +83,9 @@ echo '<br/>';
 //递归中序遍历  左子树 ---> 根节点 ---> 右子树
 function midOrderDiGui($root)
 {
+    if (!$root){
+        return;
+    }
     if ($root->left != NULL) {
         midOrderDiGui($root->left);
     }
@@ -94,6 +103,9 @@ echo '<br/>';
 //非递归中序遍历，左子树---> 根节点 ---> 右子树
 function midOrder($root)
 {
+    if (!$root){
+        return;
+    }
     $stack = [];
     $centerNode = $root;
     while(!empty($stack) || $centerNode != NULL){
@@ -144,4 +156,59 @@ function tailOrder($root){
     }
 }
 tailOrder($a);
+echo '<br/>';
+
+
+function cengOrder($root){
+    if (!$root){
+        return;
+    }
+    $queue = [];
+    array_unshift($queue,$root);
+    while (!empty($queue)){
+        $currentNode = array_pop($queue);
+        echo $currentNode->data .' ';
+        if ($currentNode->left != NULL){
+            array_unshift($queue,$currentNode->left);
+        }
+        if ($currentNode->right != NULL){
+            array_unshift($queue,$currentNode->right);
+        }
+    }
+}
+cengOrder($a);
+
+//求二叉树最大宽度
+function getBreathNodeWidth($root){
+    if (!$root){
+        return 0;
+    }
+    if ($root->left == NULL && $root->right == NULL){
+        return 1;
+    }
+
+    $queue = [];
+    $lastWidth = 1;//用于记录上一层的宽度。
+    $maxWidth = 0;//用户记录二叉树的最大宽度。
+    array_unshift($queue,$root);
+
+    while(!empty($queue)){
+        while($lastWidth != 0){
+            $currentNode = array_pop($queue);
+            echo $currentNode->data . ' ';
+            if($currentNode->left != NULL){
+                array_unshift($queue,$currentNode->left);
+            }
+            if($currentNode->right != NULL){
+                array_unshift($queue,$currentNode->right);
+            }
+            $lastWidth--;
+        }
+        $curWidth = count($queue);
+        $maxWidth = $curWidth > $maxWidth ? $curWidth : $maxWidth;
+        $lastWidth = $curWidth;
+    }
+    return $maxWidth;
+}
+var_dump(getBreathNodeWidth($a));
 echo '<br/>';

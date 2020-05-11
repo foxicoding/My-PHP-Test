@@ -28,29 +28,20 @@ class Solution
 
     private function combine($nums, $target, $list, $start)
     {
-        if ($target < 0) {
-            return;
-        }
         if ($target == 0) {
             $this->result[] = $list;
             return;
         }
-        var_dump('------' . $target);
         for ($i = $start; $i < count($nums); $i++) {
-            var_dump($i);
             //由于数字是排好序的，所以可以进行剪枝
             if ($target - $nums[$i] < 0) {
-                var_dump($target - $nums[$i] . '///////');
                 break;
             }
             $list[] = $nums[$i];
             //数字可重复使用
-            var_dump($target);
             $this->combine($nums, $target - $nums[$i], $list, $i);
             //回溯
             array_pop($list);
-            var_dump('++++++++' . $target);
-            var_dump($list);
         }
     }
 }

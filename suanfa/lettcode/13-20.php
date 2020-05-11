@@ -43,9 +43,9 @@ function isValid($s) {
         }
         if ($stack->top() == $allow[$s[$i]]){
             $stack->pop();
-            continue;
+        }else{
+            $stack->push($s[$i]);
         }
-        $stack->push($s[$i]);
     }
     return $stack->isEmpty();
 }

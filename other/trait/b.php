@@ -48,7 +48,7 @@ class Cat extends Animal
     use Dog;
     public function drive()
     {
-        echo 'this is animal drive';
+        echo 'this is animal drive aaa';
     }
 }
 
